@@ -1,46 +1,46 @@
-# lvgl_demo
+# T5-E1 Smart Power Monitor
 
-## Introduction
-This project is a demo of the LVGL library, which is a lightweight graphics library for embedded systems. It provides a simple and efficient way to create graphical user interfaces (GUIs) for embedded systems. The library is designed to be easy to use and efficient, making it ideal for use in resource-constrained environments.
+Real-time power monitor using Tuya T5-E1 AMOLED display and INA226 sensor.
 
-## Supported Platforms and Interfaces
-- [x] T3: SPI
-- [x] T5AI: RGB/8080/SPI
-- [ ] ESP32
+## Current Version (R100 Shunt)
 
-## Supported Drivers
-### Screen
-- SPI
-    - [x] ST7789 
-    - [x] ILI9341
-    - [x] GC9A01
+This version is configured for INA226 module with onboard shunt:
 
-- RGB
-    - [x] ILI9488
+- Shunt: R100 = 0.1Ω
+- Voltage: 12V system
+- Max safe current: ~0.8A
+- Interface: I2C
+- Display: AMOLED 1.75" (466x466)
 
-### Touch
-- I2C
-    - [x] GT911
-    - [x] CST816
-    - [x] GT1511
+## Hardware Used
 
-### Rotary Encoder
+- Tuya T5-E1 AMOLED board
+- INA226 current sensor (R100 module)
+- 12V power source
 
-## Supported Development Board List
-| Development Board | Screen Interface and Driver | Touch Interface and Driver | Touch Pins | Notes |
-| -------- | -------- | -------- | -------- | -------- |
-| T5AI_Board | RGB565/ILI9488 | I2C/GT1511 | SCL(P13)/SDA(P15) | [https://developer.tuya.com/en/docs/iot-device-dev/T5-E1-IPEX-development-board?id=Ke9xehig1cabj](https://developer.tuya.com/en/docs/iot-device-dev/T5-E1-IPEX-development-board?id=Ke9xehig1cabj) |
+## Wiring
 
+INA226 → T5-E1:
 
-> More driver adaptations and testing in progress...
+- SDA → GPIO17  
+- SCL → GPIO16  
+- VCC → 3.3V  
+- GND → GND  
 
-## Usage Process
-1. Run `tos menuconfig` to configure the project.
+## Features
 
-2. Configure the corresponding screen/touch/rotary encoder drivers.
+- Real-time voltage measurement
+- Real-time current measurement
+- Real-time power calculation
+- Custom circular LVGL UI
+- Overcurrent warning (0.8A limit)
 
-3. Configure the corresponding GPIO pins.
+## Build & Flash
 
-4. Compile the project.
-
-5. Burn and run.
+```bash
+cd C:\Users\maher\tuyaopen
+.\export.bat
+cd C:\Users\maher\tuyaopen\my_ina219_ui
+python ..\tos.py clean
+python ..\tos.py build
+python ..\tos.py flash --port COM4
