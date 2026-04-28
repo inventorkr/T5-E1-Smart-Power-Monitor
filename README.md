@@ -1,4 +1,4 @@
-# T5-E1 Smart Power Monitor
+# INA226 High-Accuracy Power Monitor (R100 Shunt, 12V System)
 ![Preview](preview.png.png)
 Real-time High-Accuracy Power Monitor (INA226 + R100 Shunt)  
 Tested on real 12V loads with live current, voltage, and power tracking.
