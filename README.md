@@ -1,9 +1,10 @@
 # INA226 High-Accuracy Power Monitor (R100 Shunt, 12V System)
 
-![Preview](preview.png.png)
+## Video Demonstration
 
-**Real-time high-accuracy power monitoring system using INA226 + R100 shunt (0.1Ω)**
-Tested on real 12V loads with live current, voltage, and power tracking.
+👉 Real test – don’t miss this:
+
+[![Watch the video](./preview.png.png)](https://www.youtube.com/watch?v=NKUt40wcsGk)
 
 ---
 
