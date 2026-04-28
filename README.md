@@ -1,5 +1,5 @@
 # T5-E1 Smart Power Monitor
-preview.png.png
+![Preview](preview.png.png)
 Real-time power monitor using Tuya T5-E1 AMOLED display and INA226 sensor.
 
 ## Current Version (R100 Shunt)
